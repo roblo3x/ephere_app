@@ -1,3 +1,4 @@
 class User < ApplicationRecord
-  has_one :group, through: :user_group
+  has_many :user_groups
+  has_many :groups, through: :user_groups
 end
