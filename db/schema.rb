@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_23_163234) do
+ActiveRecord::Schema.define(version: 2020_04_04_113710) do
+
+  create_table "group_subjects", force: :cascade do |t|
+    t.integer "group_id"
+    t.integer "subject_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
@@ -35,14 +42,20 @@ ActiveRecord::Schema.define(version: 2020_03_23_163234) do
   end
 
   create_table "user_groups", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "group_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "email"
     t.string "name"
     t.string "last_name"
-    t.integer "type_of_user"
+    t.boolean "is_teacher"
+    t.boolean "is_student"
+    t.boolean "is_account_manager"
+    t.integer "group_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

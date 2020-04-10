@@ -10,11 +10,15 @@ class LessonsController < ApplicationController
   # GET /lessons/1
   # GET /lessons/1.json
   def show
+
   end
 
   # GET /lessons/new
   def new
     @lesson = Lesson.new
+    if params[:subject_id]
+      @lesson.subject_id = params[:subject_id]
+    end
   end
 
   # GET /lessons/1/edit

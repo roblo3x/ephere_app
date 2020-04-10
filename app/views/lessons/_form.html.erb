@@ -18,17 +18,13 @@
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_field :description %>
   </div>
 
   <div class="field">
-    <%= form.label :type_of_user %>
-    <%= form.number_field :type_of_user %>
-  </div>
+    <%= form.label :subject_id %>
+    <%= form.select :subject_id, Subject.all.collect { |s| [s.name, s.id] } %>
 
-  <div class="field">
-    <%= form.label :link %>
-    <%= form.text_field :link %>
   </div>
 
   <div class="field">
