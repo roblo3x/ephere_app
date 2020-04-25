@@ -17,7 +17,14 @@
 
 <p>
   <strong>Group:</strong>
-  <%= User.group(:name) ? User.group(:name) : " " %>
+  <%#= User.group(:name) ? User.group(:name) : " " %>
+  <ul>
+    <% @user.groups.each do |group| %>
+      <%= "id:#{group.id}; name: #{group.name}" %>
+    <% end %>    
+  </ul>
+  
+  <% @user.group.name %>
 
 
 </p>
