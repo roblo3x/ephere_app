@@ -35,7 +35,7 @@
 yarn-debug.log*
 .yarn-integrity
 <<<<<<< HEAD
-./.idea
+.idea
 =======
 
 config/database.yml

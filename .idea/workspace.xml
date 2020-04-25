@@ -20,71 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f93077ca-a871-444b-8d01-fbca8d471b31" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.nvmrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/models/group_subject.rb.disabled" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../db/migrate/20200425161056_users_remove_group_id.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.generators" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.rakeTasks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/dictionaries/rockindesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/ephere_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/ephere_app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.rakeTasks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/../Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../app/controllers/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/models/group.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../app/models/group.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/models/group_subject.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/models/lesson.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../app/models/lesson.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/models/subject.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../app/models/subject.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/models/user_group.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../app/models/user_group.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/views/users/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/../app/views/users/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/views/users/_user.json.jbuilder" beforeDir="false" afterPath="$PROJECT_DIR$/../app/views/users/_user.json.jbuilder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/views/users/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/../app/views/users/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/views/users/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/../app/views/users/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../config/database.yml.sample" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config/initializers/filter_parameter_logging.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../config/initializers/filter_parameter_logging.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/application_system_test_case.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/channels/application_cable/connection_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/controllers/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/controllers/groups_controller_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/controllers/landing_controller_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/controllers/lessons_controller_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/controllers/subjects_controller_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/controllers/users_controller_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/fixtures/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/fixtures/files/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/fixtures/group_subjects.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/fixtures/groups.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/fixtures/lessons.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/fixtures/subjects.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/fixtures/user_groups.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/fixtures/users.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/helpers/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/integration/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/mailers/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/models/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/models/group_subject_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/models/group_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/models/lesson_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/models/subject_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/models/user_group_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/models/user_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/system/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/system/groups_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/system/lessons_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/system/subjects_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/system/users_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/test_helper.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +204,7 @@
       <workItem from="1587805610692" duration="156000" />
       <workItem from="1587805778368" duration="326000" />
       <workItem from="1587806118425" duration="33000" />
-      <workItem from="1587806181729" duration="12928000" />
+      <workItem from="1587806181729" duration="13711000" />
     </task>
     <servers />
   </component>
