@@ -20,9 +20,19 @@
     <%= form.text_field :last_name %>
   </div>
 
+ <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+
   <div class="field">
-    <%= form.label :type_of_user %>
-    <%= form.number_field :type_of_user %>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :group_id %>
+    <%= form.select :group_id, Group.all.map {|g| [g.name, g.id]}, include_blank: true %>
   </div>
 
   <div class="actions">

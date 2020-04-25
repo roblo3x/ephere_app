@@ -12,25 +12,25 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
+    <%= form.label :body %>
+    <%= form.text_field :body %>
   </div>
 
   <div class="field">
     <%= form.label :subject_id %>
-    <%= form.select :subject_id, Subject.all.collect { |s| [s.name, s.id] } %>
-
+    <%= form.select :subject_id, Subject.all.map {|s| [s.name, s.id]}, include_blank: true %>
   </div>
 
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.datetime_select :date %>
-  </div>
+
+<!--  <div class="field">-->
+    <%#= form.label :date %>
+    <%#= form.datetime_select :date %>
+<!--  </div>-->
 
   <div class="actions">
     <%= form.submit %>

@@ -10,15 +10,12 @@ class LessonsController < ApplicationController
   # GET /lessons/1
   # GET /lessons/1.json
   def show
-
   end
 
   # GET /lessons/new
   def new
     @lesson = Lesson.new
-    if params[:subject_id]
-      @lesson.subject_id = params[:subject_id]
-    end
+    @subject = Subject.all.map { |s| [s.name, s.id] }
   end
 
   # GET /lessons/1/edit
@@ -29,7 +26,6 @@ class LessonsController < ApplicationController
   # POST /lessons.json
   def create
     @lesson = Lesson.new(lesson_params)
-
     respond_to do |format|
       if @lesson.save
         format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
@@ -41,7 +37,8 @@ class LessonsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /lessons/1
+  # PATCH/PUT /
+  # lessons/1
   # PATCH/PUT /lessons/1.json
   def update
     respond_to do |format|
@@ -66,13 +63,15 @@ class LessonsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_lesson
-      @lesson = Lesson.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def lesson_params
-      params.require(:lesson).permit(:name, :description, :type_of_user, :link, :date)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_lesson
+    @lesson = Lesson.find(params[:id])
+  end
+
+
+  # Only allow a list of trusted parameters through.
+  def lesson_params
+    params.require(:lesson).permit(:name, :title, :body, :subject_id)
+  end
 end

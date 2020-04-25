@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_04_113710) do
+ActiveRecord::Schema.define(version: 2020_04_22_195007) do
 
   create_table "group_subjects", force: :cascade do |t|
     t.integer "group_id"
@@ -23,16 +23,15 @@ ActiveRecord::Schema.define(version: 2020_04_04_113710) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "academic_year"
   end
 
   create_table "lessons", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.integer "type_of_user"
-    t.string "link"
-    t.datetime "date"
+    t.string "title"
+    t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "subject_id"
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -42,22 +41,21 @@ ActiveRecord::Schema.define(version: 2020_04_04_113710) do
   end
 
   create_table "user_groups", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "group_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "user_id"
+    t.string "group_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "name"
     t.string "last_name"
-    t.boolean "is_teacher"
-    t.boolean "is_student"
-    t.boolean "is_account_manager"
-    t.integer "group_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "kind"
+    t.string "password"
+    t.string "group_id"
   end
 
 end

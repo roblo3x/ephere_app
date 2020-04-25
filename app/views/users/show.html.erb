@@ -11,9 +11,17 @@
 </p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @user.type_of_user %>
+  <strong>Password:</strong>
+  <%= @user.password %>
 </p>
+
+<p>
+  <strong>Group:</strong>
+  <%= User.group(:name) ? User.group(:name) : " " %>
+
+
+</p>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

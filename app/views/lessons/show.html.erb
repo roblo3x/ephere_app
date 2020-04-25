@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @lesson.name %>
+  <strong>Title:</strong>
+  <%= @lesson.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @lesson.description %>
+  <strong>Text:</strong>
+  <%= @lesson.body %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @lesson.subject ? @lesson.subject.name : " " %>
 </p>
 
 
@@ -16,15 +21,11 @@
   <%#= @lesson.type %>
 <!--</p>-->
 
-<p>
-  <strong>Link:</strong>
-  <%= @lesson.link %>
-</p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @lesson.date %>
-</p>
+<!--<p>-->
+<!--  <strong>Date:</strong>-->
+  <%#= @lesson.date %>
+<!--</p>-->
 
 <%= link_to 'Edit', edit_lesson_path(@lesson) %> |
 <%= link_to 'Back', lessons_path %>

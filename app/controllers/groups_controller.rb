@@ -15,17 +15,18 @@ class GroupsController < ApplicationController
   # GET /groups/new
   def new
     @group = Group.new
+    @user = User.all.map { |u| [u.name, u.id] }
   end
 
   # GET /groups/1/edit
   def edit
+    @user = User.all.map { |u| [u.name, u.id] }
   end
 
   # POST /groups
   # POST /groups.json
   def create
     @group = Group.new(group_params)
-
     respond_to do |format|
       if @group.save
         format.html { redirect_to @group, notice: 'Group was successfully created.' }
@@ -69,6 +70,6 @@ class GroupsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def group_params
-      params.require(:group).permit(:name)
+      params.require(:group).permit(:name, :academic_year, :user_id )
     end
 end

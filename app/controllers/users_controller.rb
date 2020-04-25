@@ -12,9 +12,11 @@ class UsersController < ApplicationController
   def show
   end
 
-  # GET /users/new
+  # GET /users/newz
   def new
     @user = User.new
+    @group = Group.all.map { |g| [g.name, g.id] }
+
   end
 
   # GET /users/1/edit
@@ -69,6 +71,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :last_name, :type_of_user)
+      params.require(:user).permit(:name, :last_name, :password, :email, :group_id)
     end
 end

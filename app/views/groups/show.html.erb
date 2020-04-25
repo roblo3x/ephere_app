@@ -4,6 +4,12 @@
   <strong>Name:</strong>
   <%= @group.name %>
 </p>
+<p>
+  <strong>Academic year:</strong>
+  <%= @group.academic_year %>
+</p>
+
+#сделать вывод студентов принаддежащих к этой группе
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>

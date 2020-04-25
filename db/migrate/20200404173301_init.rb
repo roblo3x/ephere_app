@@ -3,7 +3,7 @@
 class Init < ActiveRecord::Migration[6.0]
   def change
     create_table 'lessons' do |t|
-      t.string 'title', null: false, comment: 'Название урока'
+      t.string 'title'
       # t.text "description", comment: "Описание урока"
       t.text 'body', comment: 'Текст урока'
 

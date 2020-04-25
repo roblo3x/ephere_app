@@ -5,11 +5,11 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Type</th>
-      <th>Link</th>
-      <th>Date</th>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Id</th>
+      <th></th>
+      <th>Subject</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,10 +17,12 @@
   <tbody>
     <% @lessons.each do |lesson| %>
       <tr>
-        <td><%= lesson.name %></td>
-        <td><%= lesson.description %></td>
-        <td><%= lesson.link %></td>
-        <td><%= lesson.date %></td>
+        <td><%= lesson.title %></td>
+        <td><%= lesson.body %></td>
+        <td><%= lesson.subject_id %></td>
+        <td></td>
+        <td><%= lesson.subject ? lesson.subject.name : "Without subject" %></td>
+        <td></td>
         <td><%= link_to 'Show', lesson %></td>
         <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
         <td><%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
