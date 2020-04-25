@@ -1,0 +1,7 @@
+# На будущее - пока не обращаем внимание:
+#   чтобы присвоить группе предметы
+# 
+# class GroupSubject < ApplicationRecord
+#   belongs_to :group
+#   belongs_to :subject
+# end
