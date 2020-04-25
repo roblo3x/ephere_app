@@ -1,3 +1,4 @@
+# Лекция (аналог поста в блоге)
 class Lesson < ApplicationRecord
   # validates :title, presence: true
 

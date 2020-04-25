@@ -1,3 +1,4 @@
+# Учебная группа, например ИВТ-5.5-07
 class Group < ApplicationRecord
   validates :name, presence: true
   validates :academic_year, presence: true, numericality: true
@@ -7,5 +8,3 @@ class Group < ApplicationRecord
   has_many :group_subjects
   has_many :subjects, through: :group_subjects
 end
-
-#remove_column :table_name, :column_name

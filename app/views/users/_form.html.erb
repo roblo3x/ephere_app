@@ -25,14 +25,13 @@
     <%= form.email_field :email %>
   </div>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :group_id %>
-    <%= form.select :group_id, Group.all.map {|g| [g.name, g.id]}, include_blank: true %>
+  <div class="field _groups-selection-checkboxes">
+    <% Group.all.each do |group| %>
+      <%#= TODO: refactor to rails-tag-helper: check_box_tag .... %>
+      <% checked_attr = @user.group_ids.to_a.include?(group.id) ? 'checked="checked"' : '' %>
+      <input type="checkbox" id="group_id_<%= group.id %>" name="user_groups_ids[]" value="<%= group.id %>" <%= checked_attr %>>
+      <label for="group_id_<%= group.id %>"><%= group.name %></label><br>
+    <% end %>
   </div>
 
   <div class="actions">

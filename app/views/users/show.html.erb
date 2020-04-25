@@ -11,22 +11,13 @@
 </p>
 
 <p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+  <strong>Groups:</strong>
 
-<p>
-  <strong>Group:</strong>
-  <%#= User.group(:name) ? User.group(:name) : " " %>
   <ul>
-    <% @user.groups.each do |group| %>
-      <%= "id:#{group.id}; name: #{group.name}" %>
-    <% end %>    
+    <% @user.groups.each do |group|  %>
+      <li><%= group.name %></li>
+    <% end %>
   </ul>
-  
-  <% @user.group.name %>
-
-
 </p>
 
 
