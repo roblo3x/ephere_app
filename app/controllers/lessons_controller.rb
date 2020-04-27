@@ -16,7 +16,7 @@ class LessonsController < ApplicationController
   # GET /lessons/new
   def new
     @lesson = Lesson.new
-    @subject = Subject.all.map { |s| [s.name, s.id] }
+    @subject = Subject.all.map { |s| [s.title, s.id] }
   end
 
   # GET /lessons/1/edit
