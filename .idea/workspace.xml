@@ -22,8 +22,6 @@
     <list default="true" id="f93077ca-a871-444b-8d01-fbca8d471b31" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/controllers/lessons_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../app/controllers/lessons_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/views/lessons/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/../app/views/lessons/show.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +193,7 @@
       <workItem from="1587805778368" duration="326000" />
       <workItem from="1587806118425" duration="33000" />
       <workItem from="1587806181729" duration="14235000" />
-      <workItem from="1587908667838" duration="25881000" />
+      <workItem from="1587908667838" duration="26048000" />
     </task>
     <servers />
   </component>
