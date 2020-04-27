@@ -2,8 +2,16 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @subject.name %>
+  <%= @subject.title %>
 </p>
+
+<ul>
+  <% @subject.lessons.each do |lesson|%>
+    <li>
+      <%= lesson.title %>
+    </li>
+  <%end%>
+</ul>
 
 <%= link_to 'Edit', edit_subject_path(@subject) %> |
 <%= link_to 'Back', subjects_path %>

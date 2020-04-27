@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Учебная группа, например ИВТ-5.5-07
 class Group < ApplicationRecord
   validates :name, presence: true

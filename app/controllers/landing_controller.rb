@@ -1,5 +1,5 @@
-class LandingController < ApplicationController
-  def index
+# frozen_string_literal: true
 
-  end
+class LandingController < ApplicationController
+  def index; end
 end

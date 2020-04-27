@@ -1,15 +1,24 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
+<h2>
   <%= @group.name %>
-</p>
+</h2>
 <p>
-  <strong>Academic year:</strong>
+  <strong>Год начала обучения:</strong>
   <%= @group.academic_year %>
 </p>
 
-#сделать вывод студентов принаддежащих к этой группе
+<p>
+  <strong>Члены группы:</strong>
+
+<ul>
+  <% @group.users.each do |user|  %>
+    <li>
+      <%= user.name%>
+      <%= user.last_name%>
+    </li>
+  <% end %>
+</ul>
+</p>
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>

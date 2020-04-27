@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Предмет (учебная дисциплина)
 class Subject < ApplicationRecord
   has_many :group_subjects

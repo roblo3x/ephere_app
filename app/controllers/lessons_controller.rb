@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class LessonsController < ApplicationController
-  before_action :set_lesson, only: [:show, :edit, :update, :destroy]
+  before_action :set_lesson, only: %i[show edit update destroy]
 
   # GET /lessons
   # GET /lessons.json
@@ -9,8 +11,7 @@ class LessonsController < ApplicationController
 
   # GET /lessons/1
   # GET /lessons/1.json
-  def show
-  end
+  def show; end
 
   # GET /lessons/new
   def new
@@ -19,8 +20,7 @@ class LessonsController < ApplicationController
   end
 
   # GET /lessons/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /lessons
   # POST /lessons.json
@@ -68,7 +68,6 @@ class LessonsController < ApplicationController
   def set_lesson
     @lesson = Lesson.find(params[:id])
   end
-
 
   # Only allow a list of trusted parameters through.
   def lesson_params

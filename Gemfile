@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -6,8 +8,10 @@ ruby '2.6.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+# gem 'sqlite3', '~> 1.4'
+gem 'pg', '~> 1.2.3'
 # Use Puma as the app server
+gem 'devise'
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
@@ -16,8 +20,8 @@ gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.7'
 gem 'bootstrap', '~> 4.4.1'
+gem 'jbuilder', '~> 2.7'
 gem 'jquery-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -31,10 +35,10 @@ gem 'jquery-rails'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
-  gem 'pry-rails'
   gem 'pry-byebug'
-  gem 'pry-stack_explorer'
   gem 'pry-doc'
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
 end
 
 group :development do
@@ -55,4 +59,4 @@ group :test do
   gem 'webdrivers'
 end
 
-gem "react-rails", "~> 2.6"
+gem 'react-rails', '~> 2.6'

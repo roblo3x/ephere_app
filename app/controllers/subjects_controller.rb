@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class SubjectsController < ApplicationController
-  before_action :set_subject, only: [:show, :edit, :update, :destroy]
+  before_action :set_subject, only: %i[show edit update destroy]
 
   # GET /subjects
   # GET /subjects.json
@@ -9,9 +11,7 @@ class SubjectsController < ApplicationController
 
   # GET /subjects/1
   # GET /subjects/1.json
-  def show
-    @subject = Subject.find(params[:id])
-  end
+  def show; end
 
   # GET /subjects/new
   def new
@@ -20,6 +20,7 @@ class SubjectsController < ApplicationController
 
   # GET /subjects/1/edit
   def edit
+
   end
 
   # POST /subjects
@@ -32,6 +33,7 @@ class SubjectsController < ApplicationController
         format.html { redirect_to @subject, notice: 'Subject was successfully created.' }
         format.json { render :show, status: :created, location: @subject }
       else
+
         format.html { render :new }
         format.json { render json: @subject.errors, status: :unprocessable_entity }
       end
@@ -63,13 +65,14 @@ class SubjectsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_subject
-      @subject = Subject.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def subject_params
-      params.require(:subject).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_subject
+    @subject = Subject.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def subject_params
+    params.require(:subject).permit(:title, :lesson_id)
+  end
 end

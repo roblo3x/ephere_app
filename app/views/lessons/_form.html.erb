@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :subject_id %>
-    <%= form.select :subject_id, Subject.all.map {|s| [s.name, s.id]}, include_blank: true %>
+    <%= form.select :subject_id, Subject.all.map {|s| [s.title, s.id]}, include_blank: true %>
   </div>
 
 

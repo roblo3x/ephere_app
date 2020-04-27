@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Lessons</h1>
-
+<h1>Lessons</h1>l
 <table>
   <thead>
     <tr>
@@ -21,7 +20,7 @@
         <td><%= lesson.body %></td>
         <td><%= lesson.subject_id %></td>
         <td></td>
-        <td><%= lesson.subject ? lesson.subject.name : "Without subject" %></td>
+        <td><%= lesson.subject ? lesson.subject.title : "Without subject" %></td>
         <td></td>
         <td><%= link_to 'Show', lesson %></td>
         <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
