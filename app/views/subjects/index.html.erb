@@ -3,28 +3,23 @@
 <h1>Subjects</h1>
 
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% @subjects.each do |subject| %>
+  <h4><%= subject.title %></h4>
 
-  <tbody>
-    <% @subjects.each do |subject| %>
-      <tr>
-        <td><%= subject.title %></td>
-        <%subject.lessons.each do |lesson| %>
-          <td><%= lesson.title %></td>
-        <%end %>
-        <td><%= link_to 'Show', subject %></td>
-        <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
-        <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <%subject.lessons.each do |lesson| %>
+    <ul>
+      <li>
+        <%= lesson.title %>
+      </li>
+    </ul>
+
+  <%end %>
+  <%= link_to 'Show', subject %>
+  <%= link_to 'Edit', edit_subject_path(subject) %>
+  <%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <hr width="50%" align="left">
+<% end %>
+
 
 <br>
 

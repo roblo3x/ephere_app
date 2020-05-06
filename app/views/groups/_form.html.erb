@@ -21,17 +21,22 @@
     <%= form.number_field :academic_year %>
   </div>
 
-  <div class="field _student-selection-checkboxes">
+  <div class="field">
+    <%= hidden_field_tag "user_groups_ids[]", nil %>
     <% User.all.each do |user| %>
-      <%#= TODO: refactor to rails-tag-helper: check_box_tag .... %>
-      <% checked_attr = @group.user_ids.to_a.include?(user.id) ? 'checked="checked"' : '' %>
-      <input type="checkbox" id="user_id_<%= user.id %>" name="user_groups_ids[]" value="<%= user.id %>" <%= checked_attr %>>
-      <label for="user_id_<%= user.id %>"><%= user.name %></label>
-      <label for="user_id_<%= user.id %>"><%= user.last_name %></label><br>
-    <% end %>
+        <%= check_box_tag "user_groups_ids[]", user.id, @group.user_ids.include?(user.id), id: dom_id(user) %>
+        <%= label_tag dom_id(user), user.name %>
+      <%=user.last_name %>
+    <%end %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+
+  <%#= simple_form_for(@group) do |f| %>
+    <%#= f.association :users, as: :check_boxes %>
+    <%# f.collection_check_boxes(:user_ids, User.all, :id, :name) %>
+  <%#end %>
+
 <% end %>

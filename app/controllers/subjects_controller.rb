@@ -11,7 +11,8 @@ class SubjectsController < ApplicationController
 
   # GET /subjects/1
   # GET /subjects/1.json
-  def show; end
+  def show
+  end
 
   # GET /subjects/new
   def new
@@ -30,6 +31,7 @@ class SubjectsController < ApplicationController
 
     respond_to do |format|
       if @subject.save
+        @subject.group_ids = params[:group_subjects_ids]
         format.html { redirect_to @subject, notice: 'Subject was successfully created.' }
         format.json { render :show, status: :created, location: @subject }
       else
@@ -45,6 +47,7 @@ class SubjectsController < ApplicationController
   def update
     respond_to do |format|
       if @subject.update(subject_params)
+        @subject.group_ids = params[:group_subjects_ids]
         format.html { redirect_to @subject, notice: 'Subject was successfully updated.' }
         format.json { render :show, status: :ok, location: @subject }
       else
@@ -73,6 +76,6 @@ class SubjectsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def subject_params
-    params.require(:subject).permit(:title, :lesson_id)
+    params.require(:subject).permit(:title, :lesson_id, :group_id)
   end
 end

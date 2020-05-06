@@ -16,6 +16,14 @@
     <%= form.text_field :title %>
   </div>
 
+  <div class="field">
+    <%= hidden_field_tag "group_subjects_ids[]", nil %>
+    <% Group.all.each do |group| %>
+      <%= check_box_tag "group_subjects_ids[]", group.id, subject.group_ids.include?(group.id), id: dom_id(group) %>
+      <%= label_tag dom_id(group), group.name %>
+    <%end %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

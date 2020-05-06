@@ -9,7 +9,7 @@
 
 <p>
   <strong>Члены группы:</strong>
-
+</p>
 <ul>
   <% @group.users.each do |user|  %>
     <li>
@@ -18,7 +18,22 @@
     </li>
   <% end %>
 </ul>
-</p>
+
+<p><strong>Лекции:</strong></p>
+<ul>
+  <%@group.subjects.each do |subject| %>
+    <li>
+      <%= subject.title %>
+    </li>
+    <% subject.lessons.each do |lesson|%>
+      <ul>
+        <li>
+          <%= lesson.title %>
+        </li>
+      </ul>
+    <%end%>
+  <% end %>
+</ul>
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
