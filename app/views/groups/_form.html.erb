@@ -22,12 +22,17 @@
   </div>
 
   <div class="field">
-    <%= hidden_field_tag "user_groups_ids[]", nil %>
-    <% User.all.each do |user| %>
-        <%= check_box_tag "user_groups_ids[]", user.id, @group.user_ids.include?(user.id), id: dom_id(user) %>
-        <%= label_tag dom_id(user), user.name %>
-      <%=user.last_name %>
-    <%end %>
+    <ul>
+      <%= hidden_field_tag "user_groups_ids[]", nil %>
+      <% User.all.each do |user| %>
+        <li style="list-style: none; font-size: 16px; padding: 10px 0;">
+          <%= check_box_tag "user_groups_ids[]", user.id, @group.user_ids.include?(user.id), id: dom_id(user) %>
+          <%= label_tag dom_id(user), user.name %>
+          <%=user.last_name %>
+        </li>
+      <%end %>
+    </ul>
+
   </div>
 
   <div class="actions">

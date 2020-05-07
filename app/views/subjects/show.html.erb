@@ -1,14 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h2>
   <%= @subject.title %>
-</p>
+</h2>
 
+<p><strong>Лекции</strong></p>
 <ul>
   <% @subject.lessons.each do |lesson|%>
     <li>
       <%= lesson.title %>
+    </li>
+  <%end%>
+</ul>
+
+<p><strong>Группы</strong></p>
+<ul>
+  <% @subject.groups.each do |group|%>
+    <li>
+      <%= group.name %>
     </li>
   <%end%>
 </ul>
