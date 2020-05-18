@@ -2,6 +2,7 @@
 
 class LessonsController < ApplicationController
   before_action :set_lesson, only: %i[show edit update destroy]
+  before_action :authenticate_user!, except: [:show, :index]
 
   # GET /lessons
   # GET /lessons.json
@@ -26,6 +27,7 @@ class LessonsController < ApplicationController
   # POST /lessons.json
   def create
     @lesson = Lesson.new(lesson_params)
+    @lesson.subject.user = current_user
     respond_to do |format|
       if @lesson.save
         format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }

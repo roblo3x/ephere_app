@@ -11,7 +11,6 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 # gem 'sqlite3', '~> 1.4'
 gem 'pg', '~> 1.2.3'
 # Use Puma as the app server
-gem 'devise'
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
@@ -34,6 +33,7 @@ gem 'simple_form'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'devise', '>= 4.7.1'
 
 group :development, :test do
   gem 'pry-byebug'

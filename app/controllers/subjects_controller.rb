@@ -7,6 +7,7 @@ class SubjectsController < ApplicationController
   # GET /subjects.json
   def index
     @subjects = Subject.all
+    @lessons = Lesson.all
   end
 
   # GET /subjects/1
@@ -21,7 +22,6 @@ class SubjectsController < ApplicationController
 
   # GET /subjects/1/edit
   def edit
-
   end
 
   # POST /subjects
@@ -66,6 +66,17 @@ class SubjectsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  #
+  # def checkbox_items_output(parent, chain_check_item, item_ids)
+  #   hidden_field_tag "#{item_ids}", nil
+  #   parent.all.each do |item|
+  #     def checked_item (item)
+  #       return item_ids.include?(item.id), id: dom_id(item)
+  #     end
+  #     check_box_tag "#{item_ids}", item.id, chain_check_item.checked_item
+  #     label_tag dom_id(item), item.name
+  #   end
+  # end
 
   private
 
