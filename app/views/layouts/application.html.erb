@@ -10,6 +10,11 @@
   </head>
 
   <body>
-    <%= yield %>
+  <div class="container-fluid T_MainContainer">
+    <%=render template: "pages/home" %>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </div>
   </body>
 </html>

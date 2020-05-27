@@ -1,3 +1,24 @@
-// Place all the styles related to the Lessons controller here.
-// They will automatically be included in application.scss.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.M_CardLecture {
+  padding: 16px;
+  background-color: #909AAE;
+  color: #fff;
+  border-radius: 16px;
+  min-height: 184px;
+  margin: 16px;
+  a {
+    color: #fff;
+  }
+  .HeadLine {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    .A_CardCaption {
+
+    }
+  }
+  .Q_CardLectureHeader {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+}

@@ -30,6 +30,7 @@ class LessonsController < ApplicationController
     @lesson.subject.user = current_user
     respond_to do |format|
       if @lesson.save
+        format.js
         format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
         format.json { render :show, status: :created, location: @lesson }
       else
@@ -45,6 +46,7 @@ class LessonsController < ApplicationController
   def update
     respond_to do |format|
       if @lesson.update(lesson_params)
+        format.js
         format.html { redirect_to @lesson, notice: 'Lesson was successfully updated.' }
         format.json { render :show, status: :ok, location: @lesson }
       else

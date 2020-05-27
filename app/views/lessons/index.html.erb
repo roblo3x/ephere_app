@@ -1,17 +1,34 @@
-<h1>Lessons</h1>l
+<h1>Лекции</h1>
+  <div class="row row-cols-4">
     <% @lessons.each do |lesson| %>
-        <div class="lesson_container" style="width: 500px; padding: 10px">
-          <h3><%= lesson.title %></h3>
-          <h4 style="margin-bottom: 20px; font-size: 20px"><%= lesson.body %></h4>
-          <a href="#" style="color: blue"><%= lesson.subject ? lesson.subject.title : "Without subject" %></a>
-          <p>id:<%= lesson.subject_id %></p>
+    <div class="M_CardLecture col">
+      <div class="HeadLine">
+        <p class="A_CardCaption">
+          <%= link_to (lesson.subject) do %>
+            <%= lesson.subject ? lesson.subject.title : "Without subject" %>
+          <% end %>
+        </p>
+        <div class="A_MoreButton">
+          <%= image_tag('icons_24/Q_IconMore_24px.svg') %>
         </div>
+      </div>
+      <h4 class="Q_CardLectureHeader">
+        <%=link_to lesson do %>
+          <%= lesson.title %>
+        <% end %>
 
-        <%= link_to 'Show', lesson %>
-        <%= link_to 'Edit', edit_lesson_path(lesson) %>
-        <%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <hr width="50%" align="left">
+      </h4>
+      <!--<h4 style="margin-bottom: 20px; font-size: 20px"><%#= lesson.body %></h4>-->
+      <div class="BottomLine">
+
+      </div>
+    </div>
     <% end %>
-<br>
+  </div>
 
-<%= link_to 'New Lesson', new_lesson_path %>
+        <%#= link_to 'Show', lesson %>
+        <%#= link_to 'Edit', edit_lesson_path(lesson) %>
+        <%#= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+
+

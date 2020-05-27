@@ -3,19 +3,15 @@
 class SubjectsController < ApplicationController
   before_action :set_subject, only: %i[show edit update destroy]
 
-  # GET /subjects
-  # GET /subjects.json
   def index
     @subjects = Subject.all
     @lessons = Lesson.all
   end
 
-  # GET /subjects/1
-  # GET /subjects/1.json
+
   def show
   end
 
-  # GET /subjects/new
   def new
     @subject = Subject.new
   end
@@ -80,13 +76,11 @@ class SubjectsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_subject
     @subject = Subject.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def subject_params
-    params.require(:subject).permit(:title, :lesson_id, :group_id)
+    params.require(:subject).permit(:title, :group_id, lesson_ids:[] )
   end
 end

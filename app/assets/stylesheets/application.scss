@@ -13,7 +13,11 @@
  *= require_tree
  *= require_self
  */
-
+.T_MainContainer{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+@import "reset";
 @import "bootstrap";
 //@import "bootstrap-grid";
 @import "fonts";

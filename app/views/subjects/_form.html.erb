@@ -41,10 +41,12 @@
     <ul>
     <% Lesson.all.each do |lesson| %>
       <li style="list-style: none">
-        <%= check_box_tag "lesson_ids[]", lesson.id, subject.group_ids.include?(lesson.id), id: dom_id(lesson) %>
+        <%= check_box_tag "subject[lesson_ids][]", lesson.id, subject.lesson_ids.include?(lesson.id), id: dom_id(lesson) %>
         <%= label_tag dom_id(lesson), lesson.title %>
       </li>
     <%end %>
+
+      <%#=collection_check_boxes(:subject, :lesson_ids, Lesson.all, :id, :title) %>
     </ul>
     <%#= checkbox_items_output Lesson, subject, lesson_ids%>
   </div>

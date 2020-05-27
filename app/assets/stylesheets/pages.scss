@@ -1,3 +1,24 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.O_MainNavigationBar {
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  margin: 0;
+  padding: 16px !important;
+  background-color: #262C38;
+
+  .M_SideBarItem {
+    a {
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+
+  }
+  .A_Button_mini {
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 16px;
+    background: rgba(236, 237, 241, 0.16);
+  }
+}
