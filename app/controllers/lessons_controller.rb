@@ -12,7 +12,9 @@ class LessonsController < ApplicationController
 
   # GET /lessons/1
   # GET /lessons/1.json
-  def show; end
+  def show
+  end
+
 
   # GET /lessons/new
   def new
@@ -21,11 +23,14 @@ class LessonsController < ApplicationController
   end
 
   # GET /lessons/1/edit
-  def edit; end
+  def edit
+  end
 
   # POST /lessons
   # POST /lessons.json
   def create
+    binding.pry
+
     @lesson = Lesson.new(lesson_params)
     @lesson.subject.user = current_user
     respond_to do |format|

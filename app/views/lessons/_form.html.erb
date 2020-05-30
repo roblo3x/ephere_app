@@ -16,12 +16,11 @@
     <%= form.text_field :title %>
   </div>
 
-  <div class="field" id="editorjs">
+  <div class="field">
     <%= form.label :body %>
     <%= form.text_area :body %>
-    <button>Save</button>
-  </div>
-
+`
+`  </div>
   <div class="field">
     <%= form.label :subject_id %>
     <%= form.select :subject_id, Subject.all.map {|s| [s.title, s.id]}, include_blank: true %>
@@ -39,4 +38,8 @@
   </div>
 
 <% end %>
+<div id="editorjs">
+  <button id="button">Save</button>
+</div>
+
 <%= javascript_pack_tag 'Editor' %>

@@ -64,12 +64,13 @@ const editor = new EditorJS({
         }
     },
 })
-let saveBtn = document.querySelector('button');
+let saveBtn = document.querySelector('#button');
 
-saveBtn.addEventListener('click', function () {
+saveBtn.addEventListener('click', function (event) {
+    event.preventDefault()
     editor.save().then((outputData) => {
-        console.log('Article data: ', outputData)
+        alert('Article data: ', outputData)
     }).catch((error) => {
-        console.log('Saving failed: ', error)
+        alert('Saving failed: ', error)
     });
 })
