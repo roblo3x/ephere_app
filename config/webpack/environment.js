@@ -4,4 +4,5 @@ var webpack = require('webpack');environment.plugins.append(
     new webpack.ProvidePlugin({
         $: 'jquery',
     })
-)module.exports = environment
+)
+module.exports = environment

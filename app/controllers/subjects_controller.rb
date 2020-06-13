@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class SubjectsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_subject, only: %i[show edit update destroy]
 
   def index
@@ -81,6 +82,6 @@ class SubjectsController < ApplicationController
   end
 
   def subject_params
-    params.require(:subject).permit(:title, :group_id, lesson_ids:[] )
+    params.require(:subject).permit(:title, :group_id, lesson_ids:[])
   end
 end

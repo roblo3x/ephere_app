@@ -1,27 +1,34 @@
 <h1>Лекции</h1>
-  <div class="row row-cols-4">
+  <div class="row">
     <% @lessons.each do |lesson| %>
-    <div class="M_CardLecture col">
-      <div class="HeadLine">
-        <p class="A_CardCaption">
-          <%= link_to (lesson.subject) do %>
-            <%= lesson.subject ? lesson.subject.title : "Without subject" %>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+      <div class="M_CardLecture">
+        <div class="HeadLine">
+          <p class="A_CardCaption">
+            <%= link_to (lesson.subject) do %>
+              <%= lesson.subject ? lesson.subject.title : "Without subject" %>
+            <% end %>
+          </p>
+          <div class="A_MoreButton">
+            <%= link_to edit_lesson_path(lesson) do %>
+              <%= image_tag('icons_24/Q_IconMore_24px.svg') %>
           <% end %>
-        </p>
-        <div class="A_MoreButton">
-          <%= image_tag('icons_24/Q_IconMore_24px.svg') %>
+          </div>
+        </div>
+        <h4 class="Q_CardLectureHeader">
+          <%=link_to lesson do %>
+            <%= lesson.title %>
+          <% end %>
+        </h4>
+        <div class="BottomLine">
+          <span>
+            <%=lesson.created_at.strftime("%d %b %Y") %>
+          </span>
         </div>
       </div>
-      <h4 class="Q_CardLectureHeader">
-        <%=link_to lesson do %>
-          <%= lesson.title %>
-        <% end %>
 
-      </h4>
       <!--<h4 style="margin-bottom: 20px; font-size: 20px"><%#= lesson.body %></h4>-->
-      <div class="BottomLine">
 
-      </div>
     </div>
     <% end %>
   </div>

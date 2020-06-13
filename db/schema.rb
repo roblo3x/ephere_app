@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_13_152831) do
+ActiveRecord::Schema.define(version: 2020_06_04_102614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_05_13_152831) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "academic_year"
+    t.integer "academic_year", limit: 2
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_05_13_152831) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
+    t.json "editor_field"
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -54,7 +55,7 @@ ActiveRecord::Schema.define(version: 2020_05_13_152831) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "last_name"
-    t.boolean "role", default: false
+    t.boolean "role"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

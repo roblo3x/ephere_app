@@ -24,6 +24,10 @@
     <%= form.label :email %>
     <%= form.email_field :email %>
   </div>
+  <div class="field">
+    <%= form.label 'Teacher' %>
+    <%= form.check_box :role %>
+  </div>
 
   <div class="field">
     <%= hidden_field_tag "user_groups_ids[]", nil %>

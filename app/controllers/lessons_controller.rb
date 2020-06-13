@@ -2,7 +2,8 @@
 
 class LessonsController < ApplicationController
   before_action :set_lesson, only: %i[show edit update destroy]
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!
+  skip_before_action :verify_authenticity_token
 
   # GET /lessons
   # GET /lessons.json
@@ -20,6 +21,13 @@ class LessonsController < ApplicationController
   def new
     @lesson = Lesson.new
     @subject = Subject.all.map { |s| [s.title, s.id] }
+    # puts params
+    # @lesson.title = params[:title]
+    # @lesson.body = params[:data]
+
+    # if @lesson.save!
+    #   render :json => {status: 'ok'}
+    # end
   end
 
   # GET /lessons/1/edit
@@ -29,19 +37,28 @@ class LessonsController < ApplicationController
   # POST /lessons
   # POST /lessons.json
   def create
-    binding.pry
+  
 
-    @lesson = Lesson.new(lesson_params)
-    @lesson.subject.user = current_user
-    respond_to do |format|
-      if @lesson.save
-        format.js
-        format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
-        format.json { render :show, status: :created, location: @lesson }
-      else
-        format.html { render :new }
-        format.json { render json: @lesson.errors, status: :unprocessable_entity }
-      end
+    # @lesson = Lesson.new(lesson_params)
+    # @lesson.subject.user = current_user
+    # respond_to do |format|
+    #   if @lesson.save
+    #     format.js
+    #     format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
+    #     format.json { render :show, status: :created, location: @lesson }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @lesson.errors, status: :unprocessable_entity }
+    #   end
+    # end
+    @lesson = Lesson.new
+    @subject = Subject.all.map { |s| [s.title, s.id] }
+    puts params
+    @lesson.title = params[:title]
+    @lesson.body = params[:data]
+
+    if @lesson.save!
+      render :json => {status: 'ok'}
     end
   end
 

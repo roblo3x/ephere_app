@@ -21,7 +21,6 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'bootstrap', '~> 4.4.1'
 gem 'jbuilder', '~> 2.7'
-gem 'jquery-rails'
 gem 'simple_form'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -35,13 +34,12 @@ gem 'simple_form'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise', '>= 4.7.1'
 gem 'inline_svg'
-gem 'jquery-rails'
 
 group :development, :test do
-  gem 'pry-byebug'
-  gem 'pry-doc'
-  gem 'pry-rails'
-  gem 'pry-stack_explorer'
+  # gem 'pry-byebug'
+  # gem 'pry-doc'
+  # gem 'pry-rails'
+  # gem 'pry-stack_explorer'
 end
 
 group :development do

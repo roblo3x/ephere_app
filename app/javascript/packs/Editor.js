@@ -9,10 +9,16 @@ import InlineCode from '@editorjs/embed';
 import CodeTool from '@editorjs/code';
 import Paragraph from '@editorjs/paragraph';
 import Marker from '@editorjs/marker';
+import $ from 'jquery';
+import axios from 'axios'
+
+const originalData = JSON.parse(document.querySelector('#editorjs').dataset.editor || '{}')
+console.log(originalData)
 
 const editor = new EditorJS({
     holderId: 'editorjs',
 
+    data: originalData,
     tools: {
         code: CodeTool,
         raw: RawTool,
@@ -65,12 +71,10 @@ const editor = new EditorJS({
     },
 })
 let saveBtn = document.querySelector('#button');
-
 saveBtn.addEventListener('click', function (event) {
+    const title = document.querySelector('#title_input').value
     event.preventDefault()
     editor.save().then((outputData) => {
-        alert('Article data: ', outputData)
-    }).catch((error) => {
-        alert('Saving failed: ', error)
+        axios.post('/lessons', {title: title, data: JSON.stringify(outputData)}).then((res) => console.log(res)).catch(() => console.log('Error have occured'))
     });
 })

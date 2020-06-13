@@ -10,8 +10,11 @@
   </head>
 
   <body>
+  <% if user_signed_in? %>
+  <%=render template: "pages/home" %>
+  <%end %>
   <div class="container-fluid T_MainContainer">
-    <%=render template: "pages/home" %>
+
     <div class="container">
       <%= yield %>
     </div>

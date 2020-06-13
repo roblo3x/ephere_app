@@ -27,7 +27,6 @@
   </div>
 
 
-
 <!--  <div class="field">-->
     <%#= form.label :date %>
     <%#= form.datetime_select :date %>
@@ -38,8 +37,11 @@
   </div>
 
 <% end %>
-<div id="editorjs">
-  <button id="button">Save</button>
+<input type='text' name='title' id='title_input' text="<%= lesson.title %>">
+
+<div id="editorjs" data-editor="<%= lesson.body %>">
 </div>
+
+<button id="button">Save</button>
 
 <%= javascript_pack_tag 'Editor' %>

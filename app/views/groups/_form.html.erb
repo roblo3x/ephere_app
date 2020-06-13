@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :academic_year %>
-    <%= form.number_field :academic_year %>
+    <%= form.date_select('academic_year', discard_month: true, discard_day: true) %>
   </div>
 
   <div class="field">

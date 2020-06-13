@@ -12,14 +12,12 @@
 //  src: font-url('CeraProRegular.ttf') format('true-type');
 //}
 //
-@font-face {
-  font-family: 'CeraRoundProMedium';
-  src: url('/fonts/CeraRoundProMedium.woff') format("woff");
-  src: url('/fonts/CeraRoundProMedium.ttf') format("true-type");
-}
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,600;0,700;1,400&display=swap');
 @font-face {
   font-family: 'CeraRoundProRegular';
-  src: url('/fonts/CeraRoundProRegular.woff') format("woff");
-  src: url('/fonts/CeraRoundProRegular.ttf') format("true-type");
+  // src: url('/fonts/CeraRoundProRegular.woff') format("woff");
+  src: url('/fonts/CeraRoundProRegular.otf') format("true-type");
+  font-family: 'Nunito', sans-serif;
+  
 }
