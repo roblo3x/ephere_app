@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  rolify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -11,4 +12,5 @@ class User < ApplicationRecord
   # validates :kind, presence: true
   # validates :password, presence: true, length: { minimum: 10 }
   has_many :user_groups
+  has_many :groups, through: :user_groups
   end

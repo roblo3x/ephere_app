@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class GroupsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_group, only: %i[show edit update destroy]
 
   # GET /groups
@@ -80,4 +81,5 @@ class GroupsController < ApplicationController
   def group_params
     params.require(:group).permit(:name, :academic_year, :user_id, :subject_id)
   end
+
 end

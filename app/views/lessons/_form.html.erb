@@ -1,45 +1,9 @@
-<%= form_with(model: lesson, local: true) do |form| %>
-  <% if lesson.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(lesson.errors.count, "error") %> prohibited this lesson from being saved:</h2>
-
-      <ul>
-        <% lesson.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-`
-`  </div>
-  <div class="field">
-    <%= form.label :subject_id %>
-    <%= form.select :subject_id, Subject.all.map {|s| [s.title, s.id]}, include_blank: true %>
-  </div>
-
-
-
-<!--  <div class="field">-->
-    <%#= form.label :date %>
-    <%#= form.datetime_select :date %>
-<!--  </div>-->
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-
-<% end %>
-<div id="editorjs">
-  <button id="button">Save</button>
+<div id="editorjs" data-editor="<%= lesson.body %>">
+  <label>Title</label>
+  <input type='text' name='title' id='title_input' text="<%= lesson.title %>">
+  <button  class="cdx-button" id="button" data-post="<%= @post_path %>" data-source="<%= source %>">Save</button>
 </div>
+
+
 
 <%= javascript_pack_tag 'Editor' %>

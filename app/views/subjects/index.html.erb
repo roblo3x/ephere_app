@@ -1,22 +1,50 @@
-<h1>Subjects</h1>
-<% @subjects.each do |subject| %>
-  <h4><%= subject.title %></h4>
+<section class="O_SubjectCollection level-2-heading">
+  <div class="M_SectionHeader level-text">
+    <h1>Предметы</h1>
+    <button class="A_ButtonIcon button-text">
+      Создать
+      <i class='bx bx-plus bx-sm' ></i>
+    </button>
 
-  <%subject.lessons.each do |lesson| %>
-    <ul>
-      <li>
-        <%= lesson.title %>
-      </li>
-    </ul>
+  </div>
 
-  <%end %>
-  <%= link_to 'Show', subject %>
-  <%= link_to 'Edit', edit_subject_path(subject) %>
-  <%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <hr width="50%" align="left">
-<% end %>
+  <% @subjects.each do |subject| %>
+    <div class="M_CategorySubjectName">
+      <div class="A_CategoryTitle level-3-heading">
+        <div>
+          <i class='bx bxs-book-bookmark bx-sm' ></i>
+          <h3><%= subject.title %></h3>
+        </div>
+
+       <%= link_to edit_subject_path(subject) do %>
+         <i class='bx bx-dots-horizontal-rounded bx-sm'></i>
+       <%end %>
+      </div>
+
+    </div>
+    <div class="M_CardCollection col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+      <%subject.lessons.each do |lesson| %>
+        <div class="M_CardLecture">
+          <ul>
+            <li>
+              <%= lesson.title %>
+            </li>
+          </ul>
+        </div>
+    </div>
 
 
-<br>
+    <%end %>
+    <%= link_to 'Show', subject %>
 
-<%= link_to 'New Subject', new_subject_path %>
+    <%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <hr width="50%" align="left">
+  <% end %>
+
+
+  <br>
+
+  <%= link_to 'New Subject', new_subject_path %>
+</section>
+
+

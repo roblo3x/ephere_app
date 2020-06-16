@@ -1,9 +1,39 @@
 // Place all the styles related to the landing controller here.
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-
+:root {
+  --accent_orange: #F86936;
+}
 body {
-  font-family: 'CeraRoundProRegular';
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
 }
 
+.header {
+  h1 {
+    font-size: 3rem;
+    line-height: calc(3rem * 1.25);
+    font-weight: 600;
+    margin: 25vh 0 2rem 0;
+  }
+  h3 {
+    font-size: calc(1rem * 1.5);
+    margin: 0 0 3rem;
+  }
+  a {
+
+    display: inline-block;
+    padding: 1.6rem 4rem;
+    border-radius: 4rem;
+    background: var(--accent_orange);
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    color: #fff;
+    &:hover {
+      text-decoration: none;
+      opacity: .9;
+    }
+  }
+}
 

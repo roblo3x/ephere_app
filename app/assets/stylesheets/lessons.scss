@@ -1,10 +1,13 @@
 .M_CardLecture {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
   padding: 16px;
   background-color: #909AAE;
   color: #fff;
   border-radius: 16px;
   min-height: 184px;
-  margin: 16px;
+  margin: 0 0 24px 0;
   a {
     color: #fff;
   }
@@ -19,6 +22,7 @@
   .Q_CardLectureHeader {
     font-size: 18px;
     line-height: 24px;
+    margin: 0 0 32px 0;
   }
 
 }

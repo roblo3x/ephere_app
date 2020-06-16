@@ -1,18 +1,12 @@
-<p>
-  <strong>Title:</strong>
-  <%= @lesson.title %>
+<%= javascript_pack_tag 'ParseEditor' %>
 
-</p>
 
-<p>
-  <strong>Text:</strong>
-  <%= @lesson.body %>
-</p>
 
-<p>
-  <strong>Subject:</strong>
-  <%= @lesson.subject ? @lesson.subject.title : " " %>
-</p>
+<div id="container-editor" data-editor="<%= @lesson.body %>">
+  <h1><%= @lesson.title %></h1>
+  <h3><%= @lesson.subject ? @lesson.subject.title : " " %></h3>
+</div>
 
-<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+<%= link_to 'Edit', edit_lesson_path(@lesson) %>
+<%= link_to 'Destroy', lesson_path, method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Back', lessons_path %>

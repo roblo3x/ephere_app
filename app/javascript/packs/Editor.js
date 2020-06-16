@@ -9,10 +9,16 @@ import InlineCode from '@editorjs/embed';
 import CodeTool from '@editorjs/code';
 import Paragraph from '@editorjs/paragraph';
 import Marker from '@editorjs/marker';
+import $ from 'jquery';
+import axios from 'axios'
+
+const originalData = JSON.parse(document.querySelector('#editorjs').dataset.editor || '{}')
+console.log(originalData)
 
 const editor = new EditorJS({
     holderId: 'editorjs',
 
+    data: originalData,
     tools: {
         code: CodeTool,
         raw: RawTool,
@@ -64,13 +70,19 @@ const editor = new EditorJS({
         }
     },
 })
-let saveBtn = document.querySelector('#button');
-
+const saveBtn = document.querySelector('#button');
 saveBtn.addEventListener('click', function (event) {
+    const source = saveBtn.dataset.source
+    const post_path = saveBtn.dataset.post
+    const title = document.querySelector('#title_input').value
+    console.log(title)
     event.preventDefault()
     editor.save().then((outputData) => {
-        alert('Article data: ', outputData)
-    }).catch((error) => {
-        alert('Saving failed: ', error)
+        if(source === 'post'){
+            axios.post(post_path, {title: title, data: JSON.stringify(outputData)}).then((res) => window.location.replace(res.data.redirect_path)).catch(() => console.log('Error have occured'))
+        }
+        if(source === 'patch'){
+            axios.patch(post_path, {title: title, data: JSON.stringify(outputData)})
+        }
     });
 })

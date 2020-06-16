@@ -1,10 +1,14 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'lessons#index'
   devise_for :users
+  root 'lessons#index'
   get 'landing/index'
-  resources :lessons
+  resources :lessons do
+    collection do
+      post :save_editor_data
+    end
+  end
   resources :subjects
   resources :groups
   resources :users

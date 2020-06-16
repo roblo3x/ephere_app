@@ -4,14 +4,18 @@
     <title>EphereApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href='https://unpkg.com/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap' %>
   </head>
 
   <body>
-  <div class="container-fluid T_MainContainer">
-    <%=render template: "pages/home" %>
+  <% if user_signed_in? %>
+  <%=render template: "pages/home" %>
+  <%end %>
+  <div class="container-fluid T_MainContainer type-service">
+
     <div class="container">
       <%= yield %>
     </div>
