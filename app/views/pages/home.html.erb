@@ -3,7 +3,7 @@
     <%= image_tag ("icons_24/Q_IconSearch_24px.svg"), class: 'nav-link A_Button_mini' %>
   </div>
   <div class="M_SideBarItem ItemLinks">
-    <%= link_to new_lesson_path do %>
+    <%= link_to new_lesson_path(@lesson) do %>
       <%= image_tag ("icons_24/Q_IconAdd_24.svg"), class: 'nav-link A_Button_mini' %>
   <%end%>
     <%= link_to groups_path do %>

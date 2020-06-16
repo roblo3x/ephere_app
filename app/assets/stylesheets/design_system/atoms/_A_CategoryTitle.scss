@@ -1,0 +1,26 @@
+.A_CategoryTitle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  i {
+    height: 24px;
+
+  }
+  i.bxs-book-bookmark {
+    margin-right: 0.5rem;
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    color: #000000;
+    padding: 0;
+    height: 24px;
+    &:hover {
+      color: inherit;
+    }
+  }
+  div {
+    display: flex;
+  }
+
+}

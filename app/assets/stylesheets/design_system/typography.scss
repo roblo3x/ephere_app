@@ -1,0 +1,123 @@
+.type-service { //style for block elements
+  h1, h2, h3, h4, h5, h6, h1, h2, h3, h4, h5, h6 {
+    margin: 0 !important;
+    font-weight: inherit;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  .level-1-heading { //style for block elements inside .type-service class
+    h1, h2, h3 {
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: 56px;
+      line-height: 72px;
+    }
+    h2 {
+      font-size: 48px;
+      line-height: 64px;
+    }
+    h3 {
+      font-size: 40px;
+      line-height: 48px;
+    }
+  }
+  .level-2-heading { //style for block elements inside .type-service class
+    h1, h2, h3 {
+      font-weight: 600;
+    }
+    h1 {
+      font-size: 36px;
+      line-height: 48px;
+    }
+    h2 {
+      font-size: 32px;
+      line-height: 40px;
+
+    }
+    h3 {
+      font-size: 28px;
+      line-height: 40px;
+    }
+  }
+  .level-3-heading
+  { //style for block elements inside .type-service class
+    font-weight: 600;
+    h1 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+    h2 {
+      font-size: 21px;
+      line-height: 24px;
+    }
+    h3 {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+  .level-text {
+    .body {
+      font-weight: 400;
+      line-height: 24px;
+      .body-lg {
+        font-size: 18px;
+        line-height: 32px;
+      }
+      .body-md {
+        font-size: 16px;
+      }
+      .body-sm {
+        font-size: 14px;
+      }
+    }
+    .caption {
+      font-weight: 400;
+      .caption-lg {
+        font-size: 16px;
+        line-height: 16px;
+      }
+      .caption-md {
+        font-size: 14px;
+        line-height: 24px;
+      }
+      .caption-sm {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+    .overline {
+      line-height: 16px;
+      text-transform: uppercase;
+      .overline-lg {
+        font-size: 14px;
+        letter-spacing: 1.5px;
+        font-weight: 500;
+      }
+      .overline-md {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1.25px;
+      }
+      .overline-sm {
+        font-size: 10px;
+      }
+    }
+    .quote {
+      font-size: 20px;
+      line-height: 32px;
+      font-weight: 500;
+    }
+    .button-text {
+      font-size: 17px;
+      line-height: 24px;
+      font-weight: 600;
+
+    }
+  }
+}
+.type-promo {
+  font-family: 'Nunito', sans-serif;
+}
+

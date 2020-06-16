@@ -81,4 +81,5 @@ class GroupsController < ApplicationController
   def group_params
     params.require(:group).permit(:name, :academic_year, :user_id, :subject_id)
   end
+
 end

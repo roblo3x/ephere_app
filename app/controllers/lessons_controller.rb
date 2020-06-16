@@ -21,6 +21,8 @@ class LessonsController < ApplicationController
   def new
     @lesson = Lesson.new
     @subject = Subject.all.map { |s| [s.title, s.id] }
+    @source = 'post'
+    @post_path = lessons_path
     # puts params
     # @lesson.title = params[:title]
     # @lesson.body = params[:data]
@@ -32,6 +34,9 @@ class LessonsController < ApplicationController
 
   # GET /lessons/1/edit
   def edit
+    @lesson = Lesson.find(params[:id])
+    @source = 'patch'
+    @post_path = lesson_path(@lesson.id)
   end
 
   # POST /lessons
@@ -58,7 +63,7 @@ class LessonsController < ApplicationController
     @lesson.body = params[:data]
 
     if @lesson.save!
-      render :json => {status: 'ok'}
+      render :json => {status: 'ok', redirect_path: edit_lesson_path(@lesson.id)}
     end
   end
 
@@ -66,15 +71,12 @@ class LessonsController < ApplicationController
   # lessons/1
   # PATCH/PUT /lessons/1.json
   def update
-    respond_to do |format|
-      if @lesson.update(lesson_params)
-        format.js
-        format.html { redirect_to @lesson, notice: 'Lesson was successfully updated.' }
-        format.json { render :show, status: :ok, location: @lesson }
-      else
-        format.html { render :edit }
-        format.json { render json: @lesson.errors, status: :unprocessable_entity }
-      end
+    @leeson = Lesson.find(params[:id])
+    @lesson.title = params[:title]
+    @lesson.body = params[:data]
+
+    if @lesson.save!
+      render :json => {status: 'ok'}
     end
   end
 

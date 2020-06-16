@@ -10,6 +10,10 @@ a {
   margin: 0 !important;
   padding: 0 !important;
 }
+body {
+  font-size: var(--base-font-size);
+  font-family: 'Manrope', sans-serif !important;
+}
 
 
 @import "reset";
@@ -17,3 +21,10 @@ a {
 //@import "bootstrap-grid";
 @import "fonts";
 @import "landing";
+@import "design_system/typography";
+@import "design_system/variables";
+@import "design_system/quarks/quarks";
+@import "design_system/atoms/atoms";
+@import "design_system/molecules/molecules";
+@import "design_system/organisms/organisms";
+

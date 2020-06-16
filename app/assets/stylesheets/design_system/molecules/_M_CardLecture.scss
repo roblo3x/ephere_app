@@ -1,0 +1,24 @@
+.M_CardLecture {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #909AAE;
+  color: #fff;
+  border-radius: 16px;
+  min-height: 184px;
+  margin: 0 0 24px 0;
+  a {
+    color: #fff;
+  }
+  .HeadLine {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    .A_CardCaption {
+
+    }
+  }
+ 
+
+}

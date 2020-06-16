@@ -9,4 +9,6 @@ class Group < ApplicationRecord
   has_many :users, through: :user_groups
   has_many :group_subjects
   has_many :subjects, through: :group_subjects
+
+  resourcify
 end

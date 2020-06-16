@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :academic_year %>
-    <%= form.date_select('academic_year', discard_month: true, discard_day: true) %>
+    <%= form.select :academic_year, (Time.zone.now.year - 4)..(Time.zone.now.year + 1) %>
   </div>
 
   <div class="field">

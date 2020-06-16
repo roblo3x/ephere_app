@@ -6,9 +6,9 @@ require('channels')
 let componentRequireContext = require.context("components", true);
 let ReactRailsUJS = require("react_ujs");
 ReactRailsUJS.useContext(componentRequireContext);
-
+//= require jquery
 //= require popper
-//= require bootstrap-sprockets
+//= require bootstrap
 
 import $ from 'jquery';
 

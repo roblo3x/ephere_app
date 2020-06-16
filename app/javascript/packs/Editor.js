@@ -70,11 +70,19 @@ const editor = new EditorJS({
         }
     },
 })
-let saveBtn = document.querySelector('#button');
+const saveBtn = document.querySelector('#button');
 saveBtn.addEventListener('click', function (event) {
+    const source = saveBtn.dataset.source
+    const post_path = saveBtn.dataset.post
     const title = document.querySelector('#title_input').value
+    console.log(title)
     event.preventDefault()
     editor.save().then((outputData) => {
-        axios.post('/lessons', {title: title, data: JSON.stringify(outputData)}).then((res) => console.log(res)).catch(() => console.log('Error have occured'))
+        if(source === 'post'){
+            axios.post(post_path, {title: title, data: JSON.stringify(outputData)}).then((res) => window.location.replace(res.data.redirect_path)).catch(() => console.log('Error have occured'))
+        }
+        if(source === 'patch'){
+            axios.patch(post_path, {title: title, data: JSON.stringify(outputData)})
+        }
     });
 })

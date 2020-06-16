@@ -1,0 +1,13 @@
+.A_ButtonIcon {
+  background-color: var(--gray-75);
+  color: var(--black);
+  padding: 16px 20px 16px 24px;
+  border: none !important;
+  border-radius: var(--radius-min);
+  font-weight: 600;
+  display: flex !important;
+  align-items: center;
+  i{
+   margin-left: 4px;
+  }
+}

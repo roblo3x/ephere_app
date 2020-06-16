@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'lessons#index'
   get 'landing/index'
   resources :lessons do
-    collection do 
+    collection do
       post :save_editor_data
     end
   end
